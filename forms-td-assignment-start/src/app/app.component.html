@@ -1,0 +1,77 @@
+<mat-grid-list cols="1" rowHeight="1:1">
+
+  <mat-grid-tile-header>
+    <mat-toolbar color="primary">
+
+      <span>Test App</span>
+      <span class="example-spacer"></span>
+      <mat-icon class="example-icon">verified_user</mat-icon>
+
+
+    </mat-toolbar>
+  </mat-grid-tile-header>
+
+  <mat-grid-tile>
+
+      <form class="example-form form-group" #signupForm="ngForm" (ngSubmit)="onSubmit()">
+      <mat-card class="example-card">
+
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+
+        <img mat-card-image src="http://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+
+        <mat-card-content>
+            <mat-form-field class="example-full-width form-grop">
+              <input matInput placeholder="Mail" type="email" id="email" ngModel name="email" email required #email="ngModel">
+            </mat-form-field>
+            <mat-error *ngIf="!email.valid && email.touched">
+                Please enter a valid email address
+              </mat-error>
+              
+
+            <mat-form-field class="form-grop">
+              <mat-select 
+                placeholder="Choose a Subscription" 
+                name="subscription" 
+                [ngModel]="selectedSubscription">
+                <mat-option 
+                  *ngFor="let subscription of subscriptions" 
+                  [value]="subscription"
+                  >
+                    {{subscription}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width form-grop">
+                <input matInput 
+                  placeholder="Password" 
+                  type="password" 
+                  id="password" 
+                  ngModel 
+                  name="password"
+                  required 
+                  #password="ngModel">
+            </mat-form-field>
+            <mat-error *ngIf="!password.valid && password.touched">
+                Please enter a valid password
+              </mat-error>
+            
+            </mat-card-content> 
+            <p *ngIf="!signupForm.valid && signupForm">Form is invalid!</p>
+              
+            <mat-card-actions>   
+              <button mat-raised-button color="primary" type="submit">Submit</button>
+            </mat-card-actions>
+
+      </mat-card>
+  </form>
+
+  </mat-grid-tile>
+
+
+</mat-grid-list>
