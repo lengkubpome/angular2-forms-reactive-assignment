@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
@@ -37,7 +38,7 @@ import {
   MatTooltipModule,
   MatStepperModule,
 } from '@angular/material';
-import {CdkTableModule} from '@angular/cdk/typings/table';
+// import {CdkTableModule} from '@angular/cdk/typings/table';
 
 
 @NgModule({
@@ -47,8 +48,9 @@ import {CdkTableModule} from '@angular/cdk/typings/table';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
 
-    CdkTableModule,
+    // CdkTableModule,
     MatAutocompleteModule,
     MatButtonModule,
     MatButtonToggleModule,
