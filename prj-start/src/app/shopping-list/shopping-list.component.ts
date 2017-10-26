@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/subscription';
 
 import { ShoppingListService } from './shopping-list.service';
-import { Ingredient } from '../Shared/ingrediet.model';
+import { Ingredient } from '../shared/ingrediet.model';
 
 
 @Component({
