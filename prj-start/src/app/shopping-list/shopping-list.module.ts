@@ -12,6 +12,8 @@ import { NgModule } from '@angular/core';
     imports: [
         CommonModule,
         FormsModule,
-    ], exports: [FormsModule]
+    ],
+    exports: [
+    ]
 })
 export class ShoppingListModule { }

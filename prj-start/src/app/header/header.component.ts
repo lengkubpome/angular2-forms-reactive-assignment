@@ -10,14 +10,14 @@ import { DataStorageService } from '../shared/data-storage.service';
 })
 export class HeaderComponent {
   constructor(private dataStorageService: DataStorageService,
-    private authService : AuthService ) {}
+    private authService: AuthService) { }
 
   onSaveData() {
     this.dataStorageService.storeRecipes()
       .subscribe(
-        (response: Response) => {
-          console.log(response);
-        }
+      (response: Response) => {
+        console.log(response);
+      }
       );
   }
 
@@ -25,7 +25,7 @@ export class HeaderComponent {
     this.dataStorageService.getRecipes();
   }
 
-  onLogout(){
+  onLogout() {
     this.authService.logout();
   }
 }

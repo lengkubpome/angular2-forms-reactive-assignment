@@ -1,3 +1,4 @@
+import { log } from 'util';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 import { Injectable } from '@angular/core';
@@ -12,7 +13,7 @@ export class AuthService {
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .catch(
             error => console.log(error)
-            )
+            );
     }
 
     signinUser(email: string, password: string) {
@@ -46,6 +47,7 @@ export class AuthService {
     }
 
     isAuthenticated() {
+        // ตรวจสอบค่า token จะต้องไม่ Null
         return this.token != null;
     }
 }
