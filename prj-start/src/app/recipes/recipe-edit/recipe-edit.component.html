@@ -35,11 +35,13 @@
           </div>
         </div>
       </div>
+
       <div class="row">
         <div class="col-xs-12">
           <img [src]="imagePath.value" class="img-responsive">
         </div>
       </div>
+
       <div class="row">
         <div class="col-xs-12">
           <div class="form-group">
@@ -53,11 +55,12 @@
           </div>
         </div>
       </div>
+
       <div class="row">
         <div class="col-xs-12" formArrayName="ingredients">
           <div
             class="row"
-            *ngFor="let ingredientCtrl of recipeForm.get('ingredients').controls; let i = index"
+            *ngFor="let ingredientCtrl of getControls(); let i = index"
             [formGroupName]="i"
             style="margin-top: 10px;">
             <div class="col-xs-8">
@@ -90,6 +93,7 @@
           </div>
         </div>
       </div>
+      
     </form>
   </div>
 </div>
